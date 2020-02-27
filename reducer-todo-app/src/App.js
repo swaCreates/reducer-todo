@@ -18,10 +18,10 @@ function App() {
   })}
 
   // deleteTodo
-  // const deleteTodo= dispatch({
-  //   type: 'delete_TODO',
-  //   payload: ,
-  // })
+  const deleteTodo= todo => {dispatch({
+    type: 'delete_TODO',
+    payload: todo.id,
+  })}
 
   return (
     <div className="App">

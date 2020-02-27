@@ -20,25 +20,24 @@ export let initialState= [
 export const toDoReducer= (state, action) => {
     switch(action.type){
         case 'add_TODO':
-            const idHandler= state.id + 1;
             const newTodo= {
                 task: action.payload,
                 completed: false,
-                id: idHandler,
+                id: Date.now(),
             };
-            return {
-                id: idHandler,
+            return [{
+                id: Date.now(),
                 task: [...state, newTodo]
-            }
+            }]
         case 'toggle':
             return state;
         case 'delete_TODO':
             const index= state.findIndex(todo => todo.id === action.payload)
             const tasks= [...state, state];
             tasks.splice(index, 1, tasks);
-            return {
+            return [{
                 task: tasks,
-            }
+            }]
         default:
             return state;
     }

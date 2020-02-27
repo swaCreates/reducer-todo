@@ -1,0 +1,19 @@
+.container{
+
+
+    .clear-div{
+
+        button {
+            background: none;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: skyblue;
+            color: white;
+            cursor: pointer;
+        }
+        button:focus {
+            outline: none;
+        }
+    }
+}

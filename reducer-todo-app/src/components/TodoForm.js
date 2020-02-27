@@ -1,19 +1,32 @@
 import React, {useState} from 'react';
-import {Form, Input} from 'reactstrap';
+import './TodoForm.scss';
 
-export default function TodoForm() {
+export default function TodoForm(props) {
 
     const [todo, setTodo]= useState('');
 
+    const handleChanges= evt => {
+        setTodo(evt.target.value);
+    }
+
+    const addTodo= evt =>{
+        evt.preventDefault();
+        props.addTodo(todo);
+        setTodo('');
+    }
+
     return (
         <div>
-            <Form>
-                <Input
+            <div>
+                <input
                     className="title-input"
                     type="text"
                     name='addTask'
+                    value={todo}
+                    onChange={handleChanges}
                 />
-            </Form>
+                <button onClick={addTodo}>add</button>
+            </div>
         </div>
     )
 }

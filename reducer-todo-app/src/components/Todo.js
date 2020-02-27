@@ -5,7 +5,7 @@ export default function Todo(props) {
     return (
         <div className='container'>
             <div className='todo'>
-                <p>{props.todoItem.task}</p>
+                <p>{props.todo.task}</p>
             </div>
         </div>
     )

@@ -27,7 +27,7 @@ function App() {
     <div className="App">
      <h1>Reducer-To-do-App</h1>
      <TodoForm addTodo={addTodo} /*deleteTodo={deleteTodo}*/ />
-     <TodoList todo_State={state} />
+     <TodoList todoItem={state.todos} />
     </div>
   );
 }

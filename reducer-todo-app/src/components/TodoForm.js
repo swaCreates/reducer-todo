@@ -6,8 +6,10 @@ export default function TodoForm(props) {
     const [todo, setTodo]= useState('');
 
     const handleChanges= evt => {
+        evt.preventDefault();
         setTodo(evt.target.value);
     }
+    console.log(todo);
 
     const addTodo= evt =>{
         evt.preventDefault();
@@ -17,7 +19,7 @@ export default function TodoForm(props) {
 
     return (
         <div>
-            <div>
+            <form onSubmit={addTodo}>
                 <input
                     className="title-input"
                     type="text"
@@ -25,8 +27,8 @@ export default function TodoForm(props) {
                     value={todo}
                     onChange={handleChanges}
                 />
-                <button onClick={addTodo}>add</button>
-            </div>
+                <button>add</button>
+            </form>
         </div>
     )
 }

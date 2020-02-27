@@ -3,18 +3,22 @@ import Todo from './Todo';
 import './TodoList.scss';
 
 
-export default function TodoList(props) {
-
-    return (
-        <div className='container'>
-            <div className='todo-list'>
-                {props.todo_State.map(item => {
-                   return <Todo key={item.id} todoItem={item} />
-                })}
+export default function TodoList({todoItem}) {
+    if(todoItem){
+        return (
+            <div className='container'>
+                <ul className='todo-list'>
+                    {todoItem.map(item => {
+                       return <Todo key={item.id} todo={item} />
+                    })}
+                </ul>
+                <div className='clear-div'>
+                    <button className='clear'>clear</button>
+                </div>    
             </div>
-            <div className='clear-div'>
-                <button className='clear'>clear</button>
-            </div>    
-        </div>
-    )
+        )
+    } else{
+        return <h1>Add a Todo</h1>
+    }
+   
 }

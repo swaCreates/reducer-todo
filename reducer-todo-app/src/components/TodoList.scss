@@ -1,16 +1,18 @@
 .todolist-container{
-    border: 1px solid black;
+    // border: 1px solid black;
     width: 75%;
     margin: 2% auto 2% auto;
     padding: 2%;
 
     .todo-list{
-        border: 1px solid blue;
+        // border: 1px solid blue;
         width: 50%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 0 auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 2%;
     }
 
     .clear-div{
@@ -19,10 +21,11 @@
         button {
             background: none;
             border-radius: 4px;
+            font-size: 0.9rem;
         }
         button:hover {
-            background-color: orangered;
-            color: white;
+            background-color: white;
+            color: mediumslateblue;
             cursor: pointer;
         }
         button:focus {

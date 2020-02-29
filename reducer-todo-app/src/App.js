@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="App">
-     <h1>Reducer-To-do-App</h1>
+     <h1>To-do-List</h1>
      <TodoForm addTodo={addTodo} />
      <TodoList todoItems={state.todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>

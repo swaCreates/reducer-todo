@@ -21,6 +21,8 @@ export const toDoReducer= (state, action) => {
                     {task: action.payload, completed: false, id: Date.now()}
                 ]
             };
+            const stateStringified = JSON.stringify(newState);
+            localStorage.setItem('state', stateStringified);
             return newState;
         case 'toggle_TODO': {
             return {

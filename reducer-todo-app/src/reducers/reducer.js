@@ -1,7 +1,9 @@
+let task= [];
+
 export let initialState= {
     todos:[
         {
-            task: '',
+            task: task,
             completed: false,
             id: 1,
         },
@@ -20,8 +22,21 @@ export const toDoReducer= (state, action) => {
                 ]
             };
             return newState;
-        case 'TOGGLE':
-            return state;
+        case 'toggle_TODO': {
+            return {
+                ...state,
+                todos: state.todos.map(task => {
+                    if(task.id === action.payload){
+                        return{
+                            ...task,
+                            completed: !task.completed
+                        }
+                    } else{
+                        return task
+                    }
+                })
+            }
+        }
         case 'delete_TODO':
             const index= state.findIndex(todo => todo.id === action.payload)
             const tasks= [...state, state];

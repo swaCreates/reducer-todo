@@ -17,6 +17,12 @@ function App() {
     payload: todo,
   })}
 
+  // toggleTodo
+  const toggleTodo= id => {dispatch({
+    type: 'toggle_TODO',
+    payload: id,
+  })}
+
   // deleteTodo
   const deleteTodo= todo => {dispatch({
     type: 'delete_TODO',
@@ -27,7 +33,7 @@ function App() {
     <div className="App">
      <h1>Reducer-To-do-App</h1>
      <TodoForm addTodo={addTodo} /*deleteTodo={deleteTodo}*/ />
-     <TodoList todoItem={state.todos} />
+     <TodoList todoItems={state.todos} toggleTodo={toggleTodo} />
     </div>
   );
 }

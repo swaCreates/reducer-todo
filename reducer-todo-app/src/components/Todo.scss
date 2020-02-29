@@ -1,0 +1,26 @@
+div{
+   
+
+    p{
+        // font-size: 1.2rem;
+        // color: #D64550;
+    }
+
+    .todo.completed{
+        text-decoration: line-through;
+        color: #D64550;
+    }
+
+    .todo{
+        width: 50%;
+        padding: 7px;
+        border-radius: 3px;
+    }
+
+    .todo:hover{
+        cursor: pointer;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+
+    }
+}

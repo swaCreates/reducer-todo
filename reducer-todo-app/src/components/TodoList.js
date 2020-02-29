@@ -3,13 +3,13 @@ import Todo from './Todo';
 import './TodoList.scss';
 
 
-export default function TodoList({todoItem}) {
-    if(todoItem){
+export default function TodoList({todoItems, toggleTodo}) {
+    if(todoItems){
         return (
-            <div className='container'>
+            <div className='todolist-container'>
                 <ul className='todo-list'>
-                    {todoItem.map(item => {
-                       return <Todo key={item.id} todo={item} />
+                    {todoItems.map(item => {
+                       return <Todo key={item.id} todo={item} toggle={toggleTodo}  />
                     })}
                 </ul>
                 <div className='clear-div'>

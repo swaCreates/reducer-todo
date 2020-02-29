@@ -26,14 +26,13 @@ function App() {
   // deleteTodo
   const deleteTodo= todo => {dispatch({
     type: 'delete_TODO',
-    payload: todo.id,
   })}
 
   return (
     <div className="App">
      <h1>Reducer-To-do-App</h1>
-     <TodoForm addTodo={addTodo} /*deleteTodo={deleteTodo}*/ />
-     <TodoList todoItems={state.todos} toggleTodo={toggleTodo} />
+     <TodoForm addTodo={addTodo} />
+     <TodoList todoItems={state.todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 }

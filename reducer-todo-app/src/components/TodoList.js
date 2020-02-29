@@ -3,7 +3,8 @@ import Todo from './Todo';
 import './TodoList.scss';
 
 
-export default function TodoList({todoItems, toggleTodo}) {
+export default function TodoList({todoItems, toggleTodo, deleteTodo}) {
+
     if(todoItems){
         return (
             <div className='todolist-container'>
@@ -13,8 +14,8 @@ export default function TodoList({todoItems, toggleTodo}) {
                     })}
                 </ul>
                 <div className='clear-div'>
-                    <button className='clear'>clear</button>
-                </div>    
+                    <button onClick={deleteTodo} className='clear'>Clear</button>
+                </div>  
             </div>
         )
     } else{

@@ -38,12 +38,10 @@ export const toDoReducer= (state, action) => {
             }
         }
         case 'delete_TODO':
-            const index= state.findIndex(todo => todo.id === action.payload)
-            const tasks= [...state, state];
-            tasks.splice(index, 1, tasks);
-            return [{
-                task: tasks,
-            }]
+            return{
+                ...state,
+                todos: state.todos.filter(task => !task.completed)
+            }
         default:
             return state;
     }

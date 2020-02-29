@@ -13,19 +13,19 @@ function App() {
 
   // addTodo
   const addTodo= todo => {dispatch({
-    type: 'add_TODO',
+    type: 'ADD_TODO',
     payload: todo,
   })}
 
   // toggleTodo
   const toggleTodo= id => {dispatch({
-    type: 'toggle_TODO',
+    type: 'TOGGLE_TODO',
     payload: id,
   })}
 
   // deleteTodo
-  const deleteTodo= todo => {dispatch({
-    type: 'delete_TODO',
+  const deleteTodo= () => {dispatch({
+    type: 'DELETE_TODO',
   })}
 
   return (

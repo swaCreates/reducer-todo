@@ -5,6 +5,7 @@ input {
     color: white;
     font-size: 0.9rem;
     border-bottom: 1px solid white;
+    font-family: 'Spartan', sans-serif;
     
 }
 input:focus {
@@ -17,10 +18,12 @@ button {
     border-radius: 4px;
     color: white;
     font-size: 0.9rem;
+    font-family: 'Spartan', sans-serif;
+    padding: 5px;
 }
     
 button:hover {
-    background-color: skyblue;
+    background-color: royalblue;
     color: white;
     cursor: pointer;
 }

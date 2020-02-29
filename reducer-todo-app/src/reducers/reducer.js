@@ -13,7 +13,7 @@ export let initialState= {
 
 export const toDoReducer= (state, action) => {
     switch(action.type){
-        case 'add_TODO':
+        case 'ADD_TODO':
             const newState= {
                 ...state,
                 todos: [
@@ -21,10 +21,8 @@ export const toDoReducer= (state, action) => {
                     {task: action.payload, completed: false, id: Date.now()}
                 ]
             };
-            const stateStringified = JSON.stringify(newState);
-            localStorage.setItem('state', stateStringified);
             return newState;
-        case 'toggle_TODO': {
+        case 'TOGGLE_TODO': {
             return {
                 ...state,
                 todos: state.todos.map(task => {
@@ -39,7 +37,7 @@ export const toDoReducer= (state, action) => {
                 })
             }
         }
-        case 'delete_TODO':
+        case 'DELETE_TODO':
             return{
                 ...state,
                 todos: state.todos.filter(task => !task.completed)
